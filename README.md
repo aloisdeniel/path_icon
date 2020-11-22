@@ -113,10 +113,10 @@ Widget build(BuildContext context) {
 
 > What is the difference with the built-in `Icon` ?
 
-The built-in `Icon` widget uses a font characters to renders icons. Since it may be more optimized, so more recommended in most cases, `PathIcon ` may be easier for development loop (*i.e. exporting path data from a software like Figma*) and it provides a simple animated variant.
+The built-in `Icon` widget uses font characters to renders icons. Since it may be more optimized, so more recommended in most cases, `PathIcon ` may be better for development loop (*i.e. exporting path data from a software like Figma*) and it provides a simple animated variant.
 
 > What is the difference with `flutter_svg` images ?
 
-The SVGs are a lot more complete : it supports colors, clipping and various effects. So if you want to display complex icons, it may be a better option. But this comes at a cost : parsing may be less efficient, and animated colors is not included. `PathIcon ` on its side merges all paths from the document as a single `Path`.
+SVG images are a lot more complete : they support colors, clipping and various other effects. So if you want to display complex icons, they may be a better option. But this comes at a cost : the parsing may be less efficient, and animated colors are not included. `PathIcon ` on its side merges all paths from the document as a single `Path` to achieve this.
 
 
