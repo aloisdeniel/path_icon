@@ -1,3 +1,7 @@
+## [0.6.3]
+
+* Fixed issue with animated sizes.
+
 ## [0.6.2]
 
 * Added identifier to IconData to make debugging easier.

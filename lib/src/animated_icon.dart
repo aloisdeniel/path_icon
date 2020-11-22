@@ -70,24 +70,27 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
 
 class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
   ColorTween _color;
-  SizeTween _size;
+  BoxConstraintsTween _constraints;
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
     _color = visitor(_color, widget.color,
         (dynamic value) => ColorTween(begin: value as Color)) as ColorTween;
-    _size = visitor(_size, Size(widget.size, widget.size),
-        (dynamic value) => SizeTween(begin: value as Size)) as SizeTween;
+    _constraints = visitor(
+            _constraints,
+            BoxConstraints.tightFor(width: widget.size, height: widget.size),
+            (dynamic value) =>
+                BoxConstraintsTween(begin: value as BoxConstraints))
+        as BoxConstraintsTween;
   }
 
   @override
   Widget build(BuildContext context) {
     final Animation<double> animation = this.animation;
     final color = _color?.evaluate(animation);
-    final size = _size?.evaluate(animation);
-    return SizedBox(
-      width: size.width,
-      height: size.height,
+    final constraints = _constraints?.evaluate(animation);
+    return ConstrainedBox(
+      constraints: constraints,
       child: CustomPaint(
         painter: PathIconPainter(
           path: widget.data.path,
@@ -107,9 +110,9 @@ class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
       _color,
       defaultValue: null,
     ));
-    description.add(DiagnosticsProperty<SizeTween>(
-      'size',
-      _size,
+    description.add(DiagnosticsProperty<BoxConstraintsTween>(
+      'constraints',
+      _constraints,
       defaultValue: null,
     ));
   }
