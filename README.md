@@ -1,6 +1,6 @@
 # path_icon
 
-<p align="center">
+<p>
   <a href="https://pub.dartlang.org/packages/path_icon"><img src="https://img.shields.io/pub/v/path_icon.svg"></a>
   <a href="https://www.buymeacoffee.com/aloisdeniel">
     <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
