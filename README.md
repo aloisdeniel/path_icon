@@ -31,7 +31,7 @@ Widget build(BuildContext context) {
 
 ### PathIconData
 
-Path icon data represents the icon as a [Path] and a [viewBox] which specify a rectangle in user space which is mapped to the bounds of the viewport.
+Path icon data represents the icon as a `Path` and a `viewBox` which specify a rectangle in user space which is mapped to the bounds of the viewport.
 
 ![view box](images/viewbox.png)
 
@@ -94,7 +94,7 @@ Widget build(BuildContext context) {
 
 ### AnimatedPathIcon
 
-Animated version of [PathIcon] that gradually changes its [color] and [size] over a period of time.
+Animated version of `PathIcon` that gradually changes its `color` and `size` over a period of time.
 
 ```dart
 @override
