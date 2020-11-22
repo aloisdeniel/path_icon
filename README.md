@@ -64,6 +64,8 @@ final iconData = PathIconData.fromData(
 
 To initialize the path with a data string as defined in SVG paths, use the `fromData` constructor.
 
+** Warning ** : the supported operations are very limited, on purpose. This makes the parsing pass more efficient ! So make sure to optimize your content before using it. [Learn how to optimize your exports](https://github.com/aloisdeniel/path_icon/issues/1).
+
 ```dart
 final iconData = PathIconData.fromSvg(
     '''
