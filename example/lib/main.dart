@@ -65,17 +65,25 @@ class _HomePageState extends State<HomePage> {
                   ...icons.map(
                     (x) => Row(
                       children: [
-                        PathIcon(
-                          x,
-                          color: _color,
-                          size: _size,
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          color: const Color(0xFFEEEEEE),
+                          child: PathIcon(
+                            x,
+                            color: _color,
+                            size: _size,
+                          ),
                         ),
                         SizedBox(width: 20),
-                        AnimatedPathIcon(
-                          x,
-                          duration: _duration,
-                          color: _color,
-                          size: _size,
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          color: const Color(0xFFEEEEEE),
+                          child: AnimatedPathIcon(
+                            x,
+                            duration: _duration,
+                            color: _color,
+                            size: _size,
+                          ),
                         ),
                       ],
                     ),

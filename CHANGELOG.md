@@ -1,3 +1,7 @@
+## [0.6.1]
+
+* Fixed view box alignment.
+
 ## [0.6.0]
 
 * Moved semantic label at the widget level.

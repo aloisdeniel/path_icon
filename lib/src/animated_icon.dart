@@ -91,6 +91,7 @@ class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
       child: CustomPaint(
         painter: PathIconPainter(
           path: widget.data.path,
+          viewBox: widget.data.viewBox,
           semanticLabel: widget.semanticLabel,
           color: color,
         ),

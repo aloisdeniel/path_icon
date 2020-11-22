@@ -56,6 +56,7 @@ class PathIcon extends StatelessWidget {
       child: CustomPaint(
         painter: PathIconPainter(
           path: data.path,
+          viewBox: data.viewBox,
           semanticLabel: semanticLabel,
           color: iconColor,
         ),
