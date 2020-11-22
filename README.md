@@ -119,4 +119,6 @@ The built-in `Icon` widget uses font characters to renders icons. Since it may b
 
 SVG images are a lot more complete : they support colors, clipping and various other effects. So if you want to display complex icons, they may be a better option. But this comes at a cost : the parsing may be less efficient, and animated colors are not included. `PathIcon ` on its side merges all paths from the document as a single `Path` to achieve this.
 
+> Why is the parsing of my SVG file isn't working well ?
 
+The parsing pass is extremely simple, on purpose. You may have to cleanup a bit your SVG before importing it by having only simple filled (make sure to outline strokes and flatten your icon before exporting from your design software) elements : `rect`, `ellipse`, `path`, `circle`. The `g` groups have a basic support with only transforms. A more complete parsing solution may arrive in a near future, but it will have a dedicated parameter to make you realize the additional overrhead implied.
