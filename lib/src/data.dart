@@ -12,6 +12,7 @@ class PathIconData {
   const PathIconData({
     @required this.path,
     @required this.viewBox,
+    this.id,
   })  : assert(path != null),
         assert(viewBox != null);
 
@@ -99,9 +100,12 @@ class PathIconData {
   /// The area of the path that is effective.
   final Rect viewBox;
 
+  /// An optional identifier that may help for debug.
+  final String id;
+
   @override
   String toString() {
-    return 'PathIconData(viewBox: $viewBox, path: $path)';
+    return 'PathIconData(${id != null ? id : 'viewBox: $viewBox, path: $path'})';
   }
 
   @override

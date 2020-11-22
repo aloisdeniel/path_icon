@@ -1,3 +1,7 @@
+## [0.6.2]
+
+* Added identifier to IconData to make debugging easier.
+
 ## [0.6.1]
 
 * Fixed view box alignment.

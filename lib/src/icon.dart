@@ -5,8 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'data.dart';
 import 'painter.dart';
 
-Icon d;
-
 /// A graphical icon widget drawn from a path described in
 /// a [PathIconData].
 ///
