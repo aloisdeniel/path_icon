@@ -1,3 +1,7 @@
+## [0.5.2]
+
+* Fixed SVG documentation.
+
 ## [0.5.1]
 
 * Updated documentation.
