@@ -122,3 +122,5 @@ SVG images are a lot more complete : they support colors, clipping and various o
 > Why is the parsing of my SVG file isn't working well ?
 
 The parsing pass is extremely simple, on purpose. You may have to cleanup a bit your SVG before importing it by having only simple filled (make sure to outline strokes and flatten your icon before exporting from your design software) elements : `rect`, `ellipse`, `path`, `circle`. The `g` groups have a basic support with only transforms. A more complete parsing solution may arrive in a near future, but it will have a dedicated parameter to make you realize the additional overrhead implied.
+
+[See the dedicated issue for tips](https://github.com/aloisdeniel/path_icon/issues/1)
