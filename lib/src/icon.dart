@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'data.dart';
 import 'painter.dart';
 
+Icon d;
+
 /// A graphical icon widget drawn from a path described in
 /// a [PathIconData].
 ///
@@ -19,6 +21,7 @@ class PathIcon extends StatelessWidget {
     Key key,
     this.size,
     this.color,
+    this.semanticLabel,
   })  : assert(data != null),
         super(key: key);
 
@@ -30,6 +33,12 @@ class PathIcon extends StatelessWidget {
 
   /// The color that fills the data's path.
   final Color color;
+
+  /// Semantic label for the icon.
+  ///
+  /// Announced in accessibility modes (e.g TalkBack/VoiceOver).
+  /// This label does not show in the UI.
+  final String semanticLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +56,7 @@ class PathIcon extends StatelessWidget {
       child: CustomPaint(
         painter: PathIconPainter(
           path: data.path,
-          semanticLabel: data.semanticLabel,
+          semanticLabel: semanticLabel,
           color: iconColor,
         ),
       ),

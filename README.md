@@ -43,7 +43,6 @@ To create data from a Flutter path, use the default constructor.
 final iconData = PathIconData(
     path: Path()..addRect(Rect.fromLTWH(0,0,10,10)),
     viewBox: Rect.fromLTWH(0,0,0,0),
-    semanticLabel: 'Square',
 );
 ```
 
@@ -56,7 +55,6 @@ To initialize the path with a data string as defined in SVG paths, use the `from
 ```dart
 final iconData = PathIconData.fromData(
     'M101.06 190.322C92.8024 173.178 85.5 152.417 85.5 129.5C85.5',
-    semanticLabel: 'My icon',
 );
 ```
 
@@ -88,6 +86,7 @@ Widget build(BuildContext context) {
         iconData,
         color: Colors.red,
         size: 48,
+        semanticLabel: 'My icon',
     );
 }   
 ```
@@ -105,6 +104,7 @@ Widget build(BuildContext context) {
         curve: Curves.easeInOut,
         color: Colors.red,
         size: 48,
+        semanticLabel: 'My icon',
     );
 }   
 ```

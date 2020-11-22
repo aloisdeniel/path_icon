@@ -21,6 +21,7 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
     Key key,
     this.size = 24,
     this.color = Colors.black,
+    this.semanticLabel,
   })  : assert(data != null),
         assert(duration != null),
         assert(size != null),
@@ -46,6 +47,12 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
   ///
   /// This property is animated.
   final Color color;
+
+  /// Semantic label for the icon.
+  ///
+  /// Announced in accessibility modes (e.g TalkBack/VoiceOver).
+  /// This label does not show in the UI.
+  final String semanticLabel;
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -84,7 +91,7 @@ class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
       child: CustomPaint(
         painter: PathIconPainter(
           path: widget.data.path,
-          semanticLabel: widget.data.semanticLabel,
+          semanticLabel: widget.semanticLabel,
           color: color,
         ),
       ),
