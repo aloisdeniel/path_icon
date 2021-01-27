@@ -1,3 +1,7 @@
+## [0.6.4]
+
+* Fixed parsing issue with `g` tag.
+
 ## [0.6.3]
 
 * Fixed issue with animated sizes.

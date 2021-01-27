@@ -64,7 +64,7 @@ Path parseSvgElements(XmlElement element) {
 
   if (element.name.local == 'g') {
     final groupPath = Path();
-    for (var child in element.children) {
+    for (var child in element.children.whereType<XmlElement>()) {
       final childPath = parseSvgElements(child);
       if (childPath != null) {
         groupPath.addPath(childPath, Offset.zero);
