@@ -1,19 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class PathIconPainter extends CustomPainter {
   const PathIconPainter({
-    @required this.path,
-    @required this.viewBox,
+    required this.path,
+    required this.viewBox,
     this.color,
     this.semanticLabel,
-  })  : assert(path != null),
-        assert(color != null);
+  }) : assert(color != null);
 
-  final String semanticLabel;
   final Rect viewBox;
   final Path path;
-  final Color color;
+  final String? semanticLabel;
+  final Color? color;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -30,12 +30,13 @@ class PathIconPainter extends CustomPainter {
       -viewBox.left,
       -viewBox.top,
     );
-    canvas.drawPath(path, Paint()..color = color);
+    canvas.drawPath(path, Paint()..color = color ?? Colors.black);
   }
 
   @override
   SemanticsBuilderCallback get semanticsBuilder {
     return (Size size) {
+      final semanticLabel = this.semanticLabel;
       return [
         if (semanticLabel != null && semanticLabel.isNotEmpty)
           CustomPainterSemantics(

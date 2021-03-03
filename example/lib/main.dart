@@ -22,7 +22,7 @@ class ExampleApp extends StatelessWidget {
 
 class HomePage extends StatefulWidget {
   const HomePage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       child: SafeArea(
         child: Column(
           children: [
-            Picker(
+            Picker<Color>(
               values: {
                 Colors.black: 'black',
                 Colors.red: 'red',
@@ -100,10 +100,10 @@ class _HomePageState extends State<HomePage> {
 
 class Picker<T> extends StatelessWidget {
   const Picker({
-    Key key,
-    @required this.value,
-    @required this.onSelected,
-    @required this.values,
+    Key? key,
+    required this.value,
+    required this.onSelected,
+    required this.values,
   }) : super(key: key);
 
   final Map<T, String> values;

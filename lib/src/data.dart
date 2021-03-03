@@ -10,11 +10,10 @@ import 'svg_parsing.dart';
 class PathIconData {
   /// Create data from the given [path] and its [viewBox] describing the effective area.
   const PathIconData({
-    @required this.path,
-    @required this.viewBox,
+    required this.path,
+    required this.viewBox,
     this.id,
-  })  : assert(path != null),
-        assert(viewBox != null);
+  });
 
   /// Create data from the given [path].
   ///
@@ -23,11 +22,10 @@ class PathIconData {
   ///
   /// A [fillType] can override the given [path]'s one.
   factory PathIconData.sanitized({
-    @required Path path,
-    Rect viewBox,
-    PathFillType fillType,
+    required Path path,
+    Rect? viewBox,
+    PathFillType? fillType,
   }) {
-    assert(path != null);
     final bounds = path.getBounds();
 
     if (viewBox == null) {
@@ -54,10 +52,9 @@ class PathIconData {
   /// A [fillType] can be given, else `PathFillType.evenOdd`.
   factory PathIconData.fromData(
     String data, {
-    Rect viewBox,
-    PathFillType fillType,
+    Rect? viewBox,
+    PathFillType? fillType,
   }) {
-    assert(data != null);
     final path = parseSvgPathData(data);
     return PathIconData.sanitized(
       path: path,
@@ -76,7 +73,6 @@ class PathIconData {
     String data, {
     PathFillType fillType = PathFillType.evenOdd,
   }) {
-    assert(data != null);
     final document = XmlDocument.parse(data);
 
     if (document.rootElement.name.local != 'svg') {
@@ -84,8 +80,12 @@ class PathIconData {
     }
 
     final viewBoxData = document.rootElement.getAttribute('viewBox');
-    final viewBox = parseViewBox(viewBoxData);
+    final viewBox = viewBoxData == null ? Rect.zero : parseViewBox(viewBoxData);
     final path = parseSvgElements(document.rootElement);
+
+    if (path == null) {
+      throw Exception('Empty path');
+    }
 
     return PathIconData.sanitized(
       path: path,
@@ -101,7 +101,7 @@ class PathIconData {
   final Rect viewBox;
 
   /// An optional identifier that may help for debug.
-  final String id;
+  final String? id;
 
   @override
   String toString() {

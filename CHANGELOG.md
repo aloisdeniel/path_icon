@@ -1,3 +1,7 @@
+## [0.7.0]
+
+* Migration to null-safety.
+
 ## [0.6.4]
 
 * Fixed parsing issue with `g` tag.

@@ -16,17 +16,13 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
   /// The [curve] and [duration] arguments must not be null.
   const AnimatedPathIcon(
     this.data, {
-    @required Duration duration,
+    required Duration duration,
     Curve curve = Curves.easeInOut,
-    Key key,
+    Key? key,
     this.size = 24,
     this.color = Colors.black,
     this.semanticLabel,
-  })  : assert(data != null),
-        assert(duration != null),
-        assert(size != null),
-        assert(color != null),
-        super(
+  }) : super(
           key: key,
           duration: duration,
           curve: curve,
@@ -52,7 +48,7 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
   ///
   /// Announced in accessibility modes (e.g TalkBack/VoiceOver).
   /// This label does not show in the UI.
-  final String semanticLabel;
+  final String? semanticLabel;
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -69,8 +65,8 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
 }
 
 class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
-  ColorTween _color;
-  BoxConstraintsTween _constraints;
+  ColorTween? _color;
+  BoxConstraintsTween? _constraints;
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
@@ -90,7 +86,7 @@ class _AnimatedPathIconState extends AnimatedWidgetBaseState<AnimatedPathIcon> {
     final color = _color?.evaluate(animation);
     final constraints = _constraints?.evaluate(animation);
     return ConstrainedBox(
-      constraints: constraints,
+      constraints: constraints ?? BoxConstraints(),
       child: CustomPaint(
         painter: PathIconPainter(
           path: widget.data.path,

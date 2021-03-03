@@ -16,34 +16,33 @@ class PathIcon extends StatelessWidget {
   /// Create an icon from the given [data].
   const PathIcon(
     this.data, {
-    Key key,
+    Key? key,
     this.size,
     this.color,
     this.semanticLabel,
-  })  : assert(data != null),
-        super(key: key);
+  }) : super(key: key);
 
   /// The icon data.
   final PathIconData data;
 
   /// The width and height of the icon.
-  final double size;
+  final double? size;
 
   /// The color that fills the data's path.
-  final Color color;
+  final Color? color;
 
   /// Semantic label for the icon.
   ///
   /// Announced in accessibility modes (e.g TalkBack/VoiceOver).
   /// This label does not show in the UI.
-  final String semanticLabel;
+  final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
     final iconTheme = IconTheme.of(context);
     final iconSize = size ?? iconTheme.size;
     final iconOpacity = iconTheme.opacity ?? 1.0;
-    var iconColor = color ?? iconTheme.color;
+    var iconColor = color ?? iconTheme.color ?? Colors.black;
     if (iconOpacity != 1.0) {
       iconColor = iconColor.withOpacity(iconColor.opacity * iconOpacity);
     }
