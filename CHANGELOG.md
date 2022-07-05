@@ -1,5 +1,9 @@
 ## [0.7.0]
 
+* Upgrade dependencies
+
+## [0.7.0]
+
 * Migration to null-safety.
 
 ## [0.6.4]
