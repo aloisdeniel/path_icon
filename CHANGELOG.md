@@ -1,3 +1,7 @@
+## [0.7.1]
+
+* Upgraded depdencencies.
+
 ## [0.7.0]
 
 * Migration to null-safety.

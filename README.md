@@ -7,7 +7,7 @@
   </a>
 </p>
 
-An icon widget based on a path.
+An icon widget based on a vector path.
 
 ## Quickstart
 
