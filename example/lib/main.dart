@@ -117,7 +117,7 @@ class Picker<T> extends StatelessWidget {
     return Wrap(
       children: [
         ...entries.map(
-          (x) => RaisedButton(
+          (x) => TextButton(
             onPressed: () => onSelected(x.key),
             child: Text(x.value),
           ),

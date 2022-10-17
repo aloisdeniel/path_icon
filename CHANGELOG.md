@@ -1,3 +1,7 @@
+## [0.7.2]
+
+* Upgraded depdencencies.
+
 ## [0.7.1]
 
 * Upgraded depdencencies.

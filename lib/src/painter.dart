@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 class PathIconPainter extends CustomPainter {
   const PathIconPainter({
@@ -30,7 +28,7 @@ class PathIconPainter extends CustomPainter {
       -viewBox.left,
       -viewBox.top,
     );
-    canvas.drawPath(path, Paint()..color = color ?? Colors.black);
+    canvas.drawPath(path, Paint()..color = color ?? const Color(0xFF000000));
   }
 
   @override

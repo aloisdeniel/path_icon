@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,11 +15,11 @@ class PathIcon extends StatelessWidget {
   /// Create an icon from the given [data].
   const PathIcon(
     this.data, {
-    Key? key,
+    super.key,
     this.size,
     this.color,
     this.semanticLabel,
-  }) : super(key: key);
+  });
 
   /// The icon data.
   final PathIconData data;
@@ -42,7 +41,7 @@ class PathIcon extends StatelessWidget {
     final iconTheme = IconTheme.of(context);
     final iconSize = size ?? iconTheme.size;
     final iconOpacity = iconTheme.opacity ?? 1.0;
-    var iconColor = color ?? iconTheme.color ?? Colors.black;
+    var iconColor = color ?? iconTheme.color ?? const Color(0xFF000000);
     if (iconOpacity != 1.0) {
       iconColor = iconColor.withOpacity(iconColor.opacity * iconOpacity);
     }

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,17 +15,13 @@ class AnimatedPathIcon extends ImplicitlyAnimatedWidget {
   /// The [curve] and [duration] arguments must not be null.
   const AnimatedPathIcon(
     this.data, {
-    required Duration duration,
-    Curve curve = Curves.easeInOut,
-    Key? key,
+    required super.duration,
+    super.curve = Curves.easeInOut,
+    super.key,
     this.size = 24,
-    this.color = Colors.black,
+    this.color = const Color(0xFF000000),
     this.semanticLabel,
-  }) : super(
-          key: key,
-          duration: duration,
-          curve: curve,
-        );
+  });
 
   /// The path data that is filled with the color and that may have
   /// a semantic label.
